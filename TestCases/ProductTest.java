@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.ProductPage;
-import pom.Login;
 
 public class ProductTest {
 	 private WebDriver driver;
@@ -24,7 +23,8 @@ public class ProductTest {
 	    }
 
 	    @Test
-	    public void testProductPage() {
+	    public void testProductPage() 
+	    {
 	        driver.get("https://www.saucedemo.com/");
 	        login.enterUsername("standard_user");
 	        login.enterPassword("secret_sauce");
@@ -32,11 +32,14 @@ public class ProductTest {
 
 	        // Perform login verifications if needed
 
-	        String productTitle = productPage.getProductTitle();
+	        String productTitle = productPage.getProductName();
 	        productPage.clickCartButton();
 
 	        // Add assertions or verifications for the product page here
 	    }
+	   
+	    
+
 
 	    @AfterClass
 	    public void tearDown() {
