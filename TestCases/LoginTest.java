@@ -40,11 +40,15 @@ public class LoginTest {
         Assert.assertEquals(productName, "Sauce Labs Backpack");
     }
     @Test
-    public void testLoginWithoutPassword() {
-       // LoginPage loginPage = new LoginPage(driver);
+    public void testLoginWithoutPassword() {     
         loginPage.enterUsername("standard_user");      
-        loginPage.clickLoginButton();
-        
+        loginPage.clickLoginButton();        
+       Assert.assertTrue(loginPage.errorstate());
+    }
+    @Test
+    public void testLoginWithoutusername() {     
+        loginPage.enterPassword("secret_sauce");      
+        loginPage.clickLoginButton();        
        Assert.assertTrue(loginPage.errorstate());
     }
     @Test
